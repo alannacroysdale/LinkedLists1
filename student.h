@@ -27,6 +27,8 @@ class Student {
 	void setfirst(string newfirst);
 	void setlast(string newlast);
 	void setid(int newid);
+
+	void printstudent();
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include <iostream>
+//#include <iostream>
 #include "Node.h"
 #include <iomanip>
 #include <stdlib.h>
@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Node::Node(Student*){
+Node::Node (){
     next = NULL;
 }
 
@@ -15,9 +15,8 @@ Node::~Node(){
     next = NULL;
 }
 
-Student* getStudent(){
-  Student* s = new Student;
-  return s;
+Student* Node::getstudent(){
+  return mystudent;
 }
 
 void Node::setNext(Node* newnext){

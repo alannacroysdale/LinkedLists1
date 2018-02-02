@@ -36,3 +36,9 @@ void Student::setlast(string newlast) {
 void Student::setid(int newid) {
   id = newid;
 }
+
+void Student::printstudent(){
+    cout << "  Name: " << firstname << " " << lastname << endl
+         << "  ID: " << id << endl
+    	 << "  GPA: " << gpa << endl;
+}

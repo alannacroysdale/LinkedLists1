@@ -1,4 +1,4 @@
-#include <iostream>
+//#include <iostream>
 #include "student.h"
 
 using namespace std;
@@ -10,12 +10,12 @@ class Node {
     public:
 
         // Constructor
-        Node(Student*);
+        Node();
         // Destructor
         ~Node();
         void setNext(Node* newnext);
         Node* getNext();
-	Student* getStudent;
+	Student* getstudent();
         
     private:
         Student* mystudent;
