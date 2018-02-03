@@ -8,6 +8,7 @@ using namespace std;
 
 Node::Node (){
     next = NULL;
+    mystudent = new Student;
 }
 
 Node::~Node(){

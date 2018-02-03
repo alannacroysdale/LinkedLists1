@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <cstring>
 #include "Node.h"
 #include "student.h"
@@ -17,7 +16,7 @@ void averageGPA(Node* firstnode);
 int main()
 {
     bool repeat = true;
-    char input[20];
+    string maininput;
 
     Node* firstnode = NULL;
 
@@ -30,23 +29,22 @@ int main()
 
     while (repeat == true){
 
-        cout << " >> ";
-        cin.get(input, 20);
-        cin.ignore(20, '\n');
+      cout << " >> " << endl;
+        cin >> maininput;
 
-        if (strcmp(input,"add") == 0){
+        if (maininput == "add"){
             addNode(firstnode);
         }
-        else if (strcmp(input,"print") == 0){
+        else if (maininput == "print"){
             printList(firstnode, firstnode);
         }
-        else if (strcmp(input,"delete") == 0){
+        else if (maininput == "delete"){
             deleteNode(firstnode);
         }
-        else if (strcmp(input, "average") == 0){
+        else if (maininput == "average"){
             averageGPA(firstnode);
         }
-        else if (strcmp(input,"quit") == 0){
+        else if (maininput == "quit"){
             repeat = false;
         }
 
@@ -76,31 +74,34 @@ void addNode(Node* &firstnode){
         string input;
         cin >> input;
         stu->setfirst(input);
+	string input4;
         cout << "enter the last name" << endl;
-        cin >> input;
-        stu->setlast(input);
+        cin >> input4;
+        stu->setlast(input4);
 	}
 
     // If there is already at least one node in the list
     else { 
         Node* previous = NULL;
         Node* newnode = new Node();
+	cout << "this is not the first student in the list" << endl;
         cout << "enter the gpa" << endl;
         Student* st = newnode->getstudent();
-        float finput;
-        cin >> finput;
-        st->setgpa(finput);
+        float finput2;
+        cin >> finput2;
+        st->setgpa(finput2);
         cout << "enter the id" << endl;
-        int intinput;
-        cin >> intinput;
-        st->setid(intinput);
+        int intinput2;
+        cin >> intinput2;
+        st->setid(intinput2);
         cout << "enter the first name" << endl;
-        string input;
-        cin >> input;
-        st->setfirst(input);
+        string input2;
+        cin >> input2;
+        st->setfirst(input2);
+	string input3;
         cout << "enter the last name" << endl;
-        cin >> input;
-        st->setlast(input);
+        cin >> input3;
+        st->setlast(input3);
 
         // first check if it is before first node
         // if it is before the first node, then firstnode 
@@ -151,25 +152,6 @@ void addNode(Node* &firstnode){
     cout << endl;
 }
 
-void prompt (Node* node) {
-        cout << "enter the gpa" << endl;
-        Student* stu = node->getstudent();
-        float finput;
-        cin >> finput;
-        stu->setgpa(finput);
-        cout << "enter the id" << endl;
-        int intinput;
-        cin >> intinput;
-        stu->setid(intinput);
-        cout << "enter the first name" << endl;
-        string input;
-        cin >> input;
-        stu->setfirst(input);
-        cout << "enter the last name" << endl;
-        cin >> input;
-        stu->setlast(input);
-}
-
 void printList(Node* next, Node* firstnode){
 
     // If this is the first time through the recursion
@@ -206,8 +188,7 @@ void deleteNode(Node* &firstnode){
     else {
         cout << "What is the id of the student you'd like to remove? ";
         // Get user input
-        cin.get(userinput, 20);
-        cin.ignore(20, '\n');
+        cin >> userinput;
         inputID = atoi (userinput);
         // Search through nodes for one with a matching id
         // While you haven't reached the end of the list, and
