@@ -233,6 +233,9 @@ void deleteNode(Node* &firstnode){
                 // First node has been deleted, so it should now be NULL
                 firstnode = NULL;
             }
+	    if (previous == NULL) {
+	      firstnode = current->getNext();
+	    }
             // Delete current
             current->~Node();
         }
